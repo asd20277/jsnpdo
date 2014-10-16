@@ -30,6 +30,15 @@ jsnpdo
     $result 				=		$j->iary("jsntable", $ary, "POST");
 </pre>
 
+若查詢需要快取
+<pre>
+	Jsnpdo::$cache_life 		=	3; //快取存活時間
+	Jsnpdo::cache(true); //開始快取
+	$DataList 					=	Jsnpdo::selone("count(id) as `num_1`", "jsntable", "");
+	Jsnpdo::cache(false); //停止快取
+
+</pre>
+
 ###使用方法
 
 - 前往 jsnpdo/jsnpdo/Demo.php 
